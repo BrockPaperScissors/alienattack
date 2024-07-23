@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dalx7sqpnbojw"]
+[gd_scene load_steps=3 format=3 uid="uid://dalx7sqpnbojw"]
 
 [ext_resource type="Texture2D" uid="uid://dhcatemrwll2s" path="res://Assets/textures/bg.png" id="1_w8ssy"]
 [ext_resource type="PackedScene" uid="uid://xanp3klqhgcm" path="res://Scenes/player.tscn" id="2_8jh5o"]
-[ext_resource type="PackedScene" uid="uid://dpiwx1sk0p6s6" path="res://Scenes/rocket.tscn" id="3_ofdp3"]
 
 [node name="Game" type="Node2D"]
 
@@ -14,6 +13,3 @@ stretch_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("2_8jh5o")]
 position = Vector2(40, 357)
-
-[node name="Rocket" parent="." instance=ExtResource("3_ofdp3")]
-position = Vector2(167, 359)
