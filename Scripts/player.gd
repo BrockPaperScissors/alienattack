@@ -4,7 +4,7 @@ var speed = 500
 
 var rocket_scene = preload("res://Scenes/rocket.tscn")
 
-@onready var rocket_container = $RocketContainer #short method alternative to get_node("RocketContainer")
+@onready var rocket_container = $RocketContainer #short method get_node("RocketContainer")
 
 func _process(delta):
 	if Input.is_action_just_pressed("shoot"):
