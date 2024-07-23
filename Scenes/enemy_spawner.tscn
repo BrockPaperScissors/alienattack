@@ -28,3 +28,5 @@ position = Vector2(1362, 675)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="EnemyContainer" type="Node" parent="."]
