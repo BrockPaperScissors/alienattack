@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://cf1ufhlfxjodr"]
 
-[ext_resource type="Script" path="res://Scripts/EnemySpawner.gd" id="1_c82xm"]
+[ext_resource type="Script" path="res://Scripts/enemy_spawner.gd" id="1_jx4bn"]
 
 [node name="EnemySpawner" type="Node2D"]
-script = ExtResource("1_c82xm")
+script = ExtResource("1_jx4bn")
 
 [node name="SpawnPositions" type="Node2D" parent="."]
 
