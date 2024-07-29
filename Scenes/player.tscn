@@ -1,8 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://xanp3klqhgcm"]
+[gd_scene load_steps=10 format=3 uid="uid://xanp3klqhgcm"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_r003g"]
 [ext_resource type="Texture2D" uid="uid://cq6k3volok3tq" path="res://Assets/textures/player_ship.png" id="2_q7eup"]
 [ext_resource type="AudioStream" uid="uid://b57g17uyaj7fi" path="res://Assets/audio/sfx_laser2.wav" id="3_x1i0b"]
+
+[sub_resource type="Gradient" id="Gradient_xu3vd"]
+offsets = PackedFloat32Array(0, 0.54918, 1)
+colors = PackedColorArray(0.929412, 0.223529, 0.223529, 0.160784, 0.929412, 0.423529, 0.223529, 1, 0.929412, 0.423529, 0.223529, 0.498039)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_865an"]
+gradient = SubResource("Gradient_xu3vd")
+
+[sub_resource type="Curve" id="Curve_drppe"]
+_data = [Vector2(0.02, 0.978022), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_yqdry"]
+curve = SubResource("Curve_drppe")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yubgo"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(1, 15, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = -33.0
+angle_max = 125.4
+direction = Vector3(-1, 0, 0)
+spread = 75.0
+flatness = 0.6
+initial_velocity_min = 155.0
+initial_velocity_max = 155.0
+gravity = Vector3(0, 0, 0)
+scale_min = 10.0
+scale_max = 10.0
+scale_curve = SubResource("CurveTexture_yqdry")
+color_ramp = SubResource("GradientTexture1D_865an")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t74d3"]
 radius = 36.0
@@ -12,6 +45,13 @@ height = 108.0
 collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_r003g")
+
+[node name="FlameParticle" type="GPUParticles2D" parent="."]
+position = Vector2(-40, 0)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_yubgo")
+lifetime = 0.3
+randomness = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
