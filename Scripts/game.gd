@@ -10,12 +10,14 @@ var score = 0
 
 func _ready():
 	hud.set_score_label(score)
+	hud.set_lives_label(lives)
 
 func _on_deathzone_area_entered(area):
 	area.die()
 
 func _on_player_took_damage():
 	lives -= 1
+	hud.set_lives_label(lives)
 	
 	if lives == 0:
 		player.die()

@@ -1,9 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://q2rec07c0grf"]
+[gd_scene load_steps=5 format=3 uid="uid://q2rec07c0grf"]
 
 [ext_resource type="Script" path="res://Scripts/hud.gd" id="1_bb2le"]
 [ext_resource type="FontFile" uid="uid://c76o8hf4ly3yf" path="res://Assets/font/Kenney Blocks.ttf" id="2_4wvji"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ymulw"]
+font = ExtResource("2_4wvji")
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_nkbva"]
 font = ExtResource("2_4wvji")
 font_size = 48
 
@@ -20,3 +24,11 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "SCORE: 9999"
 label_settings = SubResource("LabelSettings_ymulw")
+
+[node name="Lives" type="Label" parent="."]
+layout_mode = 0
+offset_top = 62.0
+offset_right = 360.0
+offset_bottom = 134.0
+text = "LIVES: 1000"
+label_settings = SubResource("LabelSettings_nkbva")
