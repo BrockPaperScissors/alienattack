@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://xanp3klqhgcm"]
+[gd_scene load_steps=5 format=3 uid="uid://xanp3klqhgcm"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_r003g"]
 [ext_resource type="Texture2D" uid="uid://cq6k3volok3tq" path="res://Assets/textures/player_ship.png" id="2_q7eup"]
+[ext_resource type="AudioStream" uid="uid://b57g17uyaj7fi" path="res://Assets/audio/sfx_laser2.wav" id="3_x1i0b"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t74d3"]
 radius = 36.0
@@ -22,3 +23,6 @@ position = Vector2(1, 0)
 shape = SubResource("CapsuleShape2D_t74d3")
 
 [node name="RocketContainer" type="Node" parent="."]
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_x1i0b")
