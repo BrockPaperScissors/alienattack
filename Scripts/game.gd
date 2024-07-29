@@ -6,6 +6,9 @@ var score = 0
 @onready var player = $Player
 @onready var enemy_container = $EnemySpawner/EnemyContainer
 @onready var hud = $UI/HUD
+@onready var ui = $UI
+
+var game_over_screen = preload("res://Scenes/game_over_screen.tscn")
 
 
 func _ready():
@@ -13,7 +16,7 @@ func _ready():
 	hud.set_lives_label(lives)
 
 func _on_deathzone_area_entered(area):
-	area.die()
+	area.queue_free()
 
 func _on_player_took_damage():
 	lives -= 1
@@ -21,7 +24,12 @@ func _on_player_took_damage():
 	
 	if lives == 0:
 		player.die()
-		print("game over")
+		
+		await get_tree().create_timer(1.5).timeout
+		
+		var game_over_menu = game_over_screen.instantiate()
+		game_over_menu.set_score(score)
+		ui.add_child(game_over_menu)
 	else: 
 		print(str(lives) + " lives left")
 
