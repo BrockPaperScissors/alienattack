@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cwt5mimotn0as" path="res://Assets/textures/rocket.png" id="1_n1mq4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fhcuq"]
-radius = 13.0
-height = 62.0
+radius = 12.0
+height = 58.0
 
 [node name="Rocket" type="Area2D"]
 collision_layer = 4

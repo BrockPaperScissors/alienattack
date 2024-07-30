@@ -9,6 +9,7 @@ var score = 0
 @onready var ui = $UI
 @onready var enemy_hit_sound = $EnemyHitSound
 @onready var explode_sound = $ExplodeSound
+@onready var death_animation = $EnemyDeath
 
 var game_over_screen = preload("res://Scenes/game_over_screen.tscn")
 
@@ -41,7 +42,10 @@ func _on_enemy_spawner_enemy_spawned(enemy_instance):
 	enemy_instance.connect("enemy_died", on_enemy_died)
 	enemy_container.add_child(enemy_instance)
 	
-func on_enemy_died():
+func on_enemy_died(death_position):
+	print(death_position)
+	death_animation.global_position = death_position
+	death_animation.emitting = true
 	score += 100
 	enemy_hit_sound.play()
 	hud.set_score_label(score)
