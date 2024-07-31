@@ -30,3 +30,9 @@ wait_time = 3.0
 autostart = true
 
 [node name="EnemyContainer" type="Node" parent="."]
+
+[node name="EnemyPathTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="EnemyPathTimer" to="." method="_on_enemy_path_timer_timeout"]

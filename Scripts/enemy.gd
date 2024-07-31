@@ -11,9 +11,6 @@ func die():
 	emit_signal("enemy_died", death_position)
 	queue_free()
 	
-
-	
-	
 func _on_body_entered(body):
 	body.take_damage()
 	die()
